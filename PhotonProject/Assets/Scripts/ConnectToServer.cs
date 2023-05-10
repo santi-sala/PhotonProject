@@ -1,8 +1,12 @@
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.UI;
 
 public class ConnectToServer : MonoBehaviourPunCallbacks
 {
+    public const string LOBBY_SCENE = "Lobby";
+
+
     void Start()
     {
         PhotonNetwork.ConnectUsingSettings();
@@ -18,7 +22,7 @@ public class ConnectToServer : MonoBehaviourPunCallbacks
     public override void OnJoinedLobby()
     {
         // Loading a scene
-        PhotonNetwork.LoadLevel("Lobby");
+        PhotonNetwork.LoadLevel(LOBBY_SCENE);
     }
 
 }
